@@ -34,12 +34,26 @@
 		    <version>1.6.12</version>
 		</dependency>
 		
+		<dependency>
+		    <groupId>cglib</groupId>
+		    <artifactId>cglib</artifactId>
+		    <version>3.2.4</version>
+		</dependency>
+		
+		
 		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
-		<!-- <dependency>
+		<!--  -->
+		<dependency>
 		    <groupId>log4j</groupId>
 		    <artifactId>log4j</artifactId>
-		    <version>1.2.15</version>
-		</dependency> -->
+		    <version>1.2.16</version>
+		</dependency>
+		
+		<dependency>  
+           <groupId>org.slf4j</groupId>  
+           <artifactId>slf4j-log4j12</artifactId>  
+           <version>1.5.8</version>  
+		</dependency>
 		
 		
 		<dependency>
@@ -141,6 +155,12 @@
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-entitymanager</artifactId>
 		    <version>3.4.0.GA</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.32</version>
 		</dependency>
 		
 		
@@ -369,6 +389,14 @@
 			<systemPath>${basedir}/lib/json_simple-1.1.jar</systemPath>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.quartz</groupId>
+			<artifactId>quartz-all</artifactId>
+			<version>1.6.1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/quartz-all-1.6.1.jar</systemPath>
+		</dependency>
+		
 
 	</dependencies>
 
@@ -415,8 +443,8 @@
 		<file.encoding>UTF-8</file.encoding>
 		<java.version>1.7</java.version>
 		<servlet.version>2.5</servlet.version>
-		<spring.version>2.5.6</spring.version>
-		<!-- <spring.version>3.2.3.RELEASE</spring.version> -->
+		<!-- <spring.version>2.5.6</spring.version> -->
+		<spring.version>3.2.3.RELEASE</spring.version>
 	</properties>
 	<description>电商DEMO</description>
 </project>

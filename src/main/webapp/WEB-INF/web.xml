@@ -117,7 +117,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>UploadServlet</servlet-name>
-		<servlet-class>com.gsccs.mall.servlet.UploadServlet</servlet-class>
+		<servlet-class>com.gsccs.mall.foundation.servlet.UploadServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UploadServlet</servlet-name>

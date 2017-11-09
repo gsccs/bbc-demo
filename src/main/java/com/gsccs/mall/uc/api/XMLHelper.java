@@ -23,8 +23,9 @@
        NodeList nl = doc.getChildNodes().item(0).getChildNodes();
        int length = nl.getLength();
        for (int i = 0; i < length; i++)
-         if (nl.item(i).getNodeType() == 1)
-           result.add(nl.item(i).getTextContent());
+         if (nl.item(i).getNodeType() == 1){
+           //result.add(nl.item(i).getTextContent());
+         }
      }
      catch (SAXException e) {
        e.printStackTrace();
