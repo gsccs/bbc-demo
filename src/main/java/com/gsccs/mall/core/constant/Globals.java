@@ -3,11 +3,11 @@ package com.gsccs.mall.core.constant;
 
 public class Globals
 {
-  public static final String DEFAULT_SYSTEM_TITLE = "shoppingV2.0";
+  public static final String DEFAULT_SYSTEM_TITLE = "mallbbc-V1.0";
   public static final boolean SSO_SIGN = true;
-  public static final int DEFAULT_SHOP_VERSION = 20140301;
+  public static final int DEFAULT_SHOP_VERSION = 20171111;
   public static final String DEFAULT_SHOP_OUT_VERSION = "V1.0";
-  public static final String DEFAULT_WBESITE_NAME = "shopping";
+  public static final String DEFAULT_WBESITE_NAME = "mallbbc";
   public static final String DEFAULT_CLOSE_REASON = "系统维护中......";
   public static final String DEFAULT_THEME = "default";
   public static final String DERAULT_USER_TEMPLATE = "user_templates";

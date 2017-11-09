@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
-	<display-name>mallbbc-demo</display-name>
+	<display-name>mall-bbc</display-name>
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
@@ -132,11 +132,10 @@
 		<param-name>webAppRootKey</param-name>
 		<param-value>shopping.root</param-value>
 	</context-param>
+	
 	<listener>
 		<listener-class>org.springframework.web.util.WebAppRootListener</listener-class>
 	</listener>
-
-	
 
 	<error-page>
 		<error-code>500</error-code>
