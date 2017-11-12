@@ -517,6 +517,7 @@ import org.springframework.web.servlet.ModelAndView;
      }
      return "redirect:store_theme.htm";
    }
+   
    @SecurityMapping(display = false, rsequence = 0, title="店铺认证", value="/seller/store_approve.htm*", rtype="seller", rname="店铺设置", rcode="store_set_seller", rgroup="店铺设置")
    @RequestMapping({"/seller/store_approve.htm"})
    public ModelAndView store_approve(HttpServletRequest request, HttpServletResponse response) {

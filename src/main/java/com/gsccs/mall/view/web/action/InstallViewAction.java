@@ -89,7 +89,7 @@ public class InstallViewAction implements ServletContextAware {
 	@RequestMapping( { "/install_over.htm" } )
 	public ModelAndView install_over( HttpServletRequest request, HttpServletResponse response ) {
 		ModelAndView mv = new JModelAndView( "success.html", this.configService.getSysConfig(), this.userConfigService.getUserConfig(), 1, request, response );
-		mv.addObject( "op_title", "您已经安装shopping商城系统，重新安装请删除install.lock文件" );
+		mv.addObject( "op_title", "您已经安装商城系统，重新安装请删除install.lock文件" );
 		return mv;
 	}
 

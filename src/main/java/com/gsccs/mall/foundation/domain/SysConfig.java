@@ -34,6 +34,8 @@ import com.gsccs.mall.core.domain.IdEntity;
    private String address;
    //版权
    private String copyRight;
+   //
+   private String powered;
    //下载路径
    private String uploadFilePath;
    //系统语言
@@ -325,12 +327,12 @@ import com.gsccs.mall.core.domain.IdEntity;
    //微信店铺
    @Lock
    @Column(columnDefinition="bit default 0")
-   private boolean weixin_store;
+   private boolean wx_store;
  
    //微信量
    @Lock
    @Column(columnDefinition="int default 50")
-   private int weixin_amount;
+   private int wx_amount;
  
    //支付类型配置
    @Lock
@@ -339,31 +341,31 @@ import com.gsccs.mall.core.domain.IdEntity;
  
    //微信图片附件
    @OneToOne
-   private Accessory weixin_qr_img;
+   private Accessory wx_qr_img;
  
    //微信账目
-   @Lock
-   private String weixin_account;
+   //@Lock
+   private String wx_account;
  
-   @Lock
-   private String weixin_token;
+   //@Lock
+   private String wx_token;
  
    //微信应用地址
    @Lock
-   private String weixin_appId;
+   private String wx_appid;
  
    @Lock
-   private String weixin_appSecret;
+   private String wx_secret;
 
    //微信欢迎内容
    @Lock
    @Column(columnDefinition="LongText")
-   private String weixin_welecome_content;
+   private String wx_tip;
  
    //微信店铺logo
    @Lock
    @OneToOne(fetch=FetchType.LAZY)
-   private Accessory store_weixin_logo;
+   private Accessory wx_logo;
    
    private String site_url;
  
@@ -374,77 +376,6 @@ import com.gsccs.mall.core.domain.IdEntity;
      this.config_payment_type = config_payment_type;
    }
  
-   public Accessory getWeixin_qr_img() {
-     return this.weixin_qr_img;
-   }
- 
-   public void setWeixin_qr_img(Accessory weixin_qr_img) {
-     this.weixin_qr_img = weixin_qr_img;
-   }
- 
-   public String getWeixin_account() {
-     return this.weixin_account;
-   }
- 
-   public void setWeixin_account(String weixin_account) {
-     this.weixin_account = weixin_account;
-   }
- 
-   public String getWeixin_token() {
-     return this.weixin_token;
-   }
- 
-   public void setWeixin_token(String weixin_token) {
-     this.weixin_token = weixin_token;
-   }
- 
-   public String getWeixin_appId() {
-     return this.weixin_appId;
-   }
- 
-   public void setWeixin_appId(String weixin_appId) {
-     this.weixin_appId = weixin_appId;
-   }
- 
-   public String getWeixin_appSecret() {
-     return this.weixin_appSecret;
-   }
- 
-   public void setWeixin_appSecret(String weixin_appSecret) {
-     this.weixin_appSecret = weixin_appSecret;
-   }
- 
-   public String getWeixin_welecome_content() {
-     return this.weixin_welecome_content;
-   }
- 
-   public void setWeixin_welecome_content(String weixin_welecome_content) {
-     this.weixin_welecome_content = weixin_welecome_content;
-   }
- 
-   public Accessory getStore_weixin_logo() {
-     return this.store_weixin_logo;
-   }
- 
-   public void setStore_weixin_logo(Accessory store_weixin_logo) {
-     this.store_weixin_logo = store_weixin_logo;
-   }
- 
-   public int getWeixin_amount() {
-     return this.weixin_amount;
-   }
- 
-   public void setWeixin_amount(int weixin_amount) {
-     this.weixin_amount = weixin_amount;
-   }
- 
-   public boolean isWeixin_store() {
-     return this.weixin_store;
-   }
- 
-   public void setWeixin_store(boolean weixin_store) {
-     this.weixin_store = weixin_store;
-   }
  
    public int getAuto_order_return() {
      return this.auto_order_return;
@@ -1348,7 +1279,88 @@ import com.gsccs.mall.core.domain.IdEntity;
 	public void setSite_url(String site_url) {
 		this.site_url = site_url;
 	}
- }
+
+	public String getPowered() {
+		return powered;
+	}
+
+	public void setPowered(String powered) {
+		this.powered = powered;
+	}
+
+	public boolean isWx_store() {
+		return wx_store;
+	}
+
+	public void setWx_store(boolean wx_store) {
+		this.wx_store = wx_store;
+	}
+
+	public int getWx_amount() {
+		return wx_amount;
+	}
+
+	public void setWx_amount(int wx_amount) {
+		this.wx_amount = wx_amount;
+	}
+
+	public Accessory getWx_qr_img() {
+		return wx_qr_img;
+	}
+
+	public void setWx_qr_img(Accessory wx_qr_img) {
+		this.wx_qr_img = wx_qr_img;
+	}
+
+	public String getWx_account() {
+		return wx_account;
+	}
+
+	public void setWx_account(String wx_account) {
+		this.wx_account = wx_account;
+	}
+
+	public String getWx_token() {
+		return wx_token;
+	}
+
+	public void setWx_token(String wx_token) {
+		this.wx_token = wx_token;
+	}
+
+	public String getWx_appid() {
+		return wx_appid;
+	}
+
+	public void setWx_appid(String wx_appid) {
+		this.wx_appid = wx_appid;
+	}
+
+	public String getWx_secret() {
+		return wx_secret;
+	}
+
+	public void setWx_secret(String wx_secret) {
+		this.wx_secret = wx_secret;
+	}
+
+	public String getWx_tip() {
+		return wx_tip;
+	}
+
+	public void setWx_tip(String wx_tip) {
+		this.wx_tip = wx_tip;
+	}
+
+	public Accessory getWx_logo() {
+		return wx_logo;
+	}
+
+	public void setWx_logo(Accessory wx_logo) {
+		this.wx_logo = wx_logo;
+	}
+	
+}
 
 
 

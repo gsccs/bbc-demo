@@ -117,6 +117,18 @@ jQuery("a[id^=site_]").click(function(){
 	 }else jQuery("#"+id).val("false");
   });
 //
+
+  jQuery("#wx_mall_status").css("cursor","pointer").click(function(){
+    var qq_login=jQuery("#wx_store").val();
+   if(qq_login=="true"){
+     jQuery("#wx_mall_status").attr("src","$!webPath/resources/style/system/manage/$!{config.websiteCss}/images/off.jpg");
+	 jQuery("#wx_store").val("false");
+   }else{
+     jQuery("#wx_mall_status").attr("src","$!webPath/resources/style/system/manage/$!{config.websiteCss}/images/on.jpg");
+	 jQuery("#wx_store").val("true");
+   }
+  });
+  
   jQuery("#qq_login_status").css("cursor","pointer").click(function(){
     var qq_login=jQuery("#qq_login").val();
    if(qq_login=="true"){
@@ -165,6 +177,8 @@ jQuery("a[id^=site_]").click(function(){
   //
   jQuery(":radio[value=$!config.sysLanguage]").attr("checked",true);
 });
+
+
 function saveForm(){
 	jQuery("#theForm").submit();
 }
@@ -177,7 +191,7 @@ function saveForm(){
   <input name="op_title" type="hidden" id="op_title" value="站点设置成功" />
   <div class="cont">
     <h1 class="seth1">站点设置</h1>
-    <div class="settab"> <span class="tab-one"></span> <span class="tabs"> <a href="javascript:void(0);" class="this" id="site_base">基本信息</a> | <a href="javascript:void(0);" id="site_other">管理相关</a>|<a href="javascript:void(0);" id="site_service">客服设置</a>| <a href="javascript:void(0);" id="site_qq">QQ互联</a>| <a href="javascript:void(0);" id="site_sina">新浪微博</a>|<a href="javascript:void(0);" id="site_login">登录设置</a></span> <span class="tab-two"></span> </div>
+    <div class="settab"> <span class="tab-one"></span> <span class="tabs"> <a href="javascript:void(0);" class="this" id="site_base">基本信息</a> | <a href="javascript:void(0);" id="site_other">管理相关</a>|<a href="javascript:void(0);" id="site_service">客服设置</a>| <a href="javascript:void(0);" id="site_wx">微信设置</a>|<a href="javascript:void(0);" id="site_qq">QQ互联</a>| <a href="javascript:void(0);" id="site_sina">新浪微博</a>|<a href="javascript:void(0);" id="site_login">登录设置</a></span> <span class="tab-two"></span> </div>
     <div class="setcont" id="base">
       <ul class="set1">
         <li>网站名称</li>
@@ -288,6 +302,37 @@ function saveForm(){
         <li><span class="webtj">
           <textarea name="service_qq_list" cols="4" rows="6" id="service_qq_list">$!config.service_qq_list</textarea>
           </span><span id="nothis"><strong class="q"></strong><strong class="w">设置平台客服QQ，一行一个</strong><strong class="c"></strong></span></li>
+      </ul>
+    </div>
+    <div class="setcont" id="wx" style="display:none;">
+      <ul class="set1">
+        <li>是否启用微信商城</li>
+        <li><span class="webSwitch"><img src="$!webPath/resources/style/system/manage/$!{config.websiteCss}/images/on.jpg" width="61" height="23" id="wx_mall_status" />
+          <input name="wx_store" type="hidden" id="wx_store" value="$!config.wx_store" />
+          </span><span id="nothis"><strong class="q"></strong><strong class="w">开启后可使用微信商城系统</strong><strong class="c"></strong></span></li>
+        <li>域名验证信息wx_account</li>
+        <li><span class="webname">
+        	<input name="wx_account" type="text" id="wx_account" value="$!config.wx_account" />
+          </span></li>
+      	<li>应用标识wx_appid</li>
+        <li><span class="webname">
+          <input name="wx_appid" type="text" id="wx_appid" value="$!config.wx_appid" />
+          </span>
+        </li>
+        <li>应用标识wx_secret</li>
+        <li><span class="webname">
+          <input name="wx_secret" type="text" id="wx_secret" value="$!config.wx_secret" />
+          </span>
+        </li>
+        <li>应用密钥wx_token</li>
+        <li><span class="webname">
+          <input name="wx_token" type="text" id="wx_token" value="$!config.wx_token" />
+          </span>
+        </li>
+        <li>域名验证信息</li>
+        <li><span class="webtj">
+          <textarea name="wx_tip" cols="" rows="" id="wx_tip">$!config.wx_tip</textarea>
+          </span></li>
       </ul>
     </div>
     <div class="setcont" id="qq" style="display:none;">

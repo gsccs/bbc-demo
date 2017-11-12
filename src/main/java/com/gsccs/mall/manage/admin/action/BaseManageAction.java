@@ -153,6 +153,7 @@ import com.gsccs.mall.uc.api.UCClient;
      }
    }
  
+   
    @RequestMapping({"/logout_success.htm"})
    public void logout_success(HttpServletRequest request, HttpServletResponse response) throws IOException {
      HttpSession session = request.getSession(false);
@@ -500,6 +501,8 @@ import com.gsccs.mall.uc.api.UCClient;
        this.userConfigService.getUserConfig(), 0, request, response);
      return mv;
    }
+   
+   
    @SecurityMapping(display = false, rsequence = 0, title="SEO设置", value="/admin/set_seo.htm*", rtype="admin", rname="SEO设置", rcode="admin_set_seo", rgroup="设置")
    @RequestMapping({"/admin/set_seo.htm"})
    public ModelAndView set_seo(HttpServletRequest request, HttpServletResponse response) {
@@ -508,6 +511,8 @@ import com.gsccs.mall.uc.api.UCClient;
        this.userConfigService.getUserConfig(), 0, request, response);
      return mv;
    }
+   
+   
    @SecurityMapping(display = false, rsequence = 0, title="二级域名设置", value="/admin/set_second_domain.htm*", rtype="admin", rname="二级域名设置", rcode="admin_set_second_domain", rgroup="设置")
    @RequestMapping({"/admin/set_second_domain.htm"})
    public ModelAndView set_second_domain(HttpServletRequest request, HttpServletResponse response) {
