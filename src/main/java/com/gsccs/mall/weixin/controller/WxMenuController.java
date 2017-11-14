@@ -34,6 +34,7 @@ public class WxMenuController implements WxMpMenuService{
 	@Autowired
 	private WxMpService wxService;
 	
+	
 	@SecurityMapping(display = false, rsequence = 0, title="微商城配置", value="/admin/set_wxmenu.htm*", rtype="admin", rname="微信店铺", rcode="weixin_admin", rgroup="运营")
 	@RequestMapping({"/admin/set_wxmenu.htm"})
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response){
