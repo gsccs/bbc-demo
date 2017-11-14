@@ -345,26 +345,26 @@ import com.gsccs.mall.core.domain.IdEntity;
  
    //微信账目
    //@Lock
-   private String wx_account;
+   @Column(name="wx_account")
+   private String wxAccount;
  
    //@Lock
-   private String wx_token;
- 
+   @Column(name="wx_token")
+   private String wxToken;
+   @Column(name="wx_aeskey")
+   private String wxAesKey;
    //微信应用地址
-   @Lock
-   private String wx_appid;
- 
-   @Lock
-   private String wx_secret;
+   @Column(name="wx_appid")
+   private String wxAppid;
+   @Column(name="wx_secret")
+   private String wxSecret;
 
    //微信欢迎内容
-   @Lock
-   @Column(columnDefinition="LongText")
-   private String wx_tip;
+   @Column(name="wx_tip")
+   private String wxTip;
  
    //微信店铺logo
-   @Lock
-   @OneToOne(fetch=FetchType.LAZY)
+   @OneToOne
    private Accessory wx_logo;
    
    private String site_url;
@@ -1312,44 +1312,52 @@ import com.gsccs.mall.core.domain.IdEntity;
 		this.wx_qr_img = wx_qr_img;
 	}
 
-	public String getWx_account() {
-		return wx_account;
+	public String getWxAccount() {
+		return wxAccount;
 	}
 
-	public void setWx_account(String wx_account) {
-		this.wx_account = wx_account;
+	public void setWxAccount(String wxAccount) {
+		this.wxAccount = wxAccount;
 	}
 
-	public String getWx_token() {
-		return wx_token;
+	public String getWxToken() {
+		return wxToken;
 	}
 
-	public void setWx_token(String wx_token) {
-		this.wx_token = wx_token;
+	public void setWxToken(String wxToken) {
+		this.wxToken = wxToken;
 	}
 
-	public String getWx_appid() {
-		return wx_appid;
+	public String getWxAesKey() {
+		return wxAesKey;
 	}
 
-	public void setWx_appid(String wx_appid) {
-		this.wx_appid = wx_appid;
+	public void setWxAesKey(String wxAesKey) {
+		this.wxAesKey = wxAesKey;
 	}
 
-	public String getWx_secret() {
-		return wx_secret;
+	public String getWxAppid() {
+		return wxAppid;
 	}
 
-	public void setWx_secret(String wx_secret) {
-		this.wx_secret = wx_secret;
+	public void setWxAppid(String wxAppid) {
+		this.wxAppid = wxAppid;
 	}
 
-	public String getWx_tip() {
-		return wx_tip;
+	public String getWxSecret() {
+		return wxSecret;
 	}
 
-	public void setWx_tip(String wx_tip) {
-		this.wx_tip = wx_tip;
+	public void setWxSecret(String wxSecret) {
+		this.wxSecret = wxSecret;
+	}
+
+	public String getWxTip() {
+		return wxTip;
+	}
+
+	public void setWxTip(String wxTip) {
+		this.wxTip = wxTip;
 	}
 
 	public Accessory getWx_logo() {
@@ -1359,6 +1367,8 @@ import com.gsccs.mall.core.domain.IdEntity;
 	public void setWx_logo(Accessory wx_logo) {
 		this.wx_logo = wx_logo;
 	}
+
+	
 	
 }
 

@@ -182,12 +182,12 @@ import com.gsccs.mall.uc.api.UCClient;
        String uc_logout_js = uc.uc_user_synlogout();
        request.getSession(false).setAttribute("uc_logout_js", uc_logout_js);
      }
-     /*
+     
      String shopping_view_type = CommUtil.null2String(request.getSession(false).getAttribute("shopping_view_type"));
      //跳转到微信端
      if ((shopping_view_type != null) && (!shopping_view_type.equals("")) && (shopping_view_type.equals("wap"))) {
     	 targetUrl = CommUtil.getURL(request) + "/user/login.htm";
-     }*/
+     }
      response.sendRedirect(targetUrl);
    }
  
@@ -226,6 +226,8 @@ import com.gsccs.mall.uc.api.UCClient;
      if (this.configService.getSysConfig().isUc_bbs()) {
        String uc_login_js = CommUtil.null2String(request.getSession(false)
          .getAttribute("uc_login_js"));
+       
+       System.out.println("uc_login_js:"+uc_login_js);
        mv.addObject("uc_login_js", uc_login_js);
      }
      return mv;
