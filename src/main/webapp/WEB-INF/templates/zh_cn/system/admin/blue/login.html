@@ -2,10 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>shopping商城系统后台登录</title>
-</head>
-<link href="$!webPath/resources/style/system/manage/blue/login.css" rel="stylesheet" type="text/css" />
+<title>商城系统后台登录</title>
+<meta name="keywords" content="$!config.keywords" />
+<meta name="description" content="$!config.description" />
+<meta name="generator" content=""/>
+<meta name="author" content="$!config.powered" />
+<meta name="copyright" content="$!config.copyRight" />
+<link href="$!webPath/resources/style/system/front/default/css/public.css" type="text/css" rel="stylesheet" />
+<link href="$!webPath/resources/style/system/front/default/css/goods.css" type="text/css" rel="stylesheet" />
 <script src="$!webPath/resources/js/jquery-1.6.2.js"></script>
+<script src="$!webPath/resources/js/jquery.validate.min.js"></script>
 <script>
 function refreshCode(){
 	jQuery("#code_img").attr("src","$!webPath/verify.htm?d"+new Date().getTime());
@@ -26,66 +32,85 @@ jQuery(document).ready(function(){
 	jQuery('#username').focus();	
 });
 </script>
+</head>
 <body>
-<form name="theForm" id="theForm" action="$!webPath/shopping_login.htm" method="post">
-<div class="main_body">
-  <div class="login_top"> </div>
-  <div class="login_mid">
-    <div class="login_left"></div>
-    <div class="login_m">
-      <ul>
-        <li>
-          <div class="usename"></div>
-		  #if($!user)
-		  <div class="utxt">
-			<input name="username" type="hidden" id="username" value="$!user.userName" />$!user.userName
+
+<div class="main"> 
+	 <div class="head_login">
+		 <div class="login_logo" style="margin-top:30px; padding-left:80px;">
+		 #if($!config.websiteLogo) 
+		 <a href="$!webPath/index.htm"><img src="$!imageWebServer/$!config.websiteLogo.path/$!config.websiteLogo.name" border="0" /></a>
+		 #else
+		 <a href="$!webPath/index.htm"><img src="$!imageWebServer/resources/style/system/front/default/images/logo.png"  border="0" /></a>
+		 #end
 		 </div>
-		  #else
-          <div class="ntxt">
-            <input name="username" type="text" id="username"  autocomplete="false"/>
+	 </div>
+  <div class="index">
+    <div class="index2">
+      <div class="login_usertb">
+        <div class="login_usetbox">
+          <div class="login_usrin">
+            <ul>
+              <form action="$!webPath/shopping_login.htm" method="post" name="theForm" id="theForm">
+                <li class="login_usertxt"><b>登录名：</b>
+                  <input name="username" type="text" id="username" class="login_utxt" autocomplete="off" />
+                  <span class="login_error_sp" style="display:none"></span></li>
+                <li class="login_usertxt"><b>密&nbsp;&nbsp;&nbsp;码：</b>
+                  <input name="password" type="password" id="password"  autocomplete="off" class="login_utxt"/>
+                  <span class="login_error_sp" style="display:none"></span>
+                </li>
+            		
+                <li class="login_usercode"><b>验证码：</b>
+                  <input name="code" type="text" id="code"  autocomplete="off" style="text-transform:uppercase;" class="usecode" />
+                  <span class="login_codeimg"> 
+                  <img style="cursor:pointer;" src="$!webPath/verify.htm" id="code_img" onclick="refreshCode();" width="59" height="27" /></span>
+                  <a href="javascript:void(0);" onclick="refreshCode();" class="usenosee">看不清换一张</a>
+                <li class="login_usercheck"><a href="$!webPath/forget.htm" class="forgetpsw">忘记登录密码?</a><a href="$!webPath/register.htm" class="user_regist">免费注册</a></li>
+                <li>
+                  <input name="" type="button" class="login_userbtn" value="登录"  onclick="login();" style="cursor:pointer"/>
+                  <input name="login_role" type="hidden" id="login_role" value="admin" />
+                </li>
+              </form>
+            </ul>
           </div>
-		  #end
-        </li>
-        <li>
-          <div class="password"></div>
-          <div class="ptxt">
-            <input name="password" type="password" id="password"  autocomplete="false"/>
-          </div>
-        </li>
-        <li>
-          <div class="yzm"></div>
-          <div class="ytxt">
-            <input name="code" type="text" id="code"  style="text-transform:uppercase;" autocomplete="false"/>
-          </div>
-          <div class="yzmimg"><img style="cursor:pointer;" src="$!webPath/verify.htm" id="code_img" onclick="refreshCode();" width="59" height="27" /></div>
-        </li>
-      </ul>
-    </div>
-    <div class="login_r"></div>
-  </div>
-  <div class="login_mid2">
-    <div class="login_left2"></div>
-    <div class="login_m2">
-	  <div style="width:140px;float:left;"><a href="$!webPath/index.htm" target="_blank" style="padding-top:0px; display:block; float:right; margin-right:30px;color:#fff">返回首页</a></div>
-      <div class="m1">
-        <input name="" type="button"  value="" onclick="login();" style="cursor:pointer"/>
-        <input name="login_role" type="hidden" id="login_role" value="admin" />
+        </div>
+        <div class="login_usertb_bgimg">
+        	<span class="imgcenter_span">
+        	#set($img="$!webPath/$!imageViewTools.random_login_img()")
+        	<p>
+        	#if($!img) 
+          	<img src="$!webPath/resources/style/common/images/login_img.jpg" width="490" height="400" />
+          	#else
+          	<img src="$!img" width="490" height="400" />
+          	#end
+          	</p>
+          </span>
+        </div>
       </div>
-      <div class="m2">
-        <input name="" type="reset"  value=""  style="cursor:pointer"/>
-      </div>
     </div>
-    <div class="login_r2"></div>
   </div>
-  <div class="bottom">
-    <div class="bottoml"></div>
-    <div class="bottomm"></div>
-    <div class="bottomr"></div>
+  
+
+	<div class="footer">
+		<div class="footerArea">
+		  <ul>
+		    <li>
+		    #set($navs=$!navTools.queryNav(1,-1))
+		    #foreach($nav in $navs)
+		     #if($!CommUtil.indexOf("$!nav.url","http://")>=0)
+		      #set($url="$!nav.url")
+		    #else
+		      #set($url="$!webPath/$!{nav.url}")
+		    #end
+		    <a href="$!url" #if($!nav.new_win==1)target="_blank"#end>$!{nav.title}</a>#if($!{velocityCount}<$navs.size())|#end
+		    #end   
+		    </li>
+		    <li class="hui2">$!config.copyRight</li>
+		    <li class="hui2">$!config.powered</li>
+		    <li>$!config.codeStat</li>
+		  </ul>
+		</div>
+	</div>
   </div>
-  <div class="tell">
-    <p>Copyright 2011-2014 © <a href="#" target="_blank"><span style="color: #2662AC;">shopping</span></a> xxx</p>
-    </div>
-</div>
-</form>
 </body>
 </html>

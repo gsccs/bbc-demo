@@ -2,7 +2,6 @@
 		<div class="phone_foot">
 			<div class="foot_top">
 				<span class="fl">
-				
 				#if($!user)
 				<span>
 					$!CommUtil.substring("$!{user.userName}",5)您好</span><b>|</b>
@@ -20,7 +19,7 @@
 				<a href="$!webPath/index.htm">电脑版</a> <a
 					href="javascript:void(0);">客户端</a>
 			</div>
-			<div class="foot_nav">$!webPath</div>
+			<div class="foot_nav">$!config.copyRight</div>
 		</div>
 
 		<!--按钮-->
